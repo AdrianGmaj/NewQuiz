@@ -1,0 +1,76 @@
+.card {
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Teko', sans-serif;
+    background-color: whitesmoke;
+    height: 50vh;
+    width: 50vw;
+    border-radius: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    -webkit-box-shadow: 8px 9px 3px 0px rgba(66, 68, 90, 1);
+
+    &-question {
+        padding: 2vh 2vw;
+        background-color: #7dd87d;
+        border-radius: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+    }
+
+    &-content {
+        display: grid;
+        grid-template-rows: 80% 20%;
+        padding: 1rem;
+
+        &_answers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            text-align: center;
+
+            span {
+                border-bottom: 0.1rem solid rgb(174, 171, 171);
+                border-right: 0.1rem solid rgb(174, 171, 171);
+                border-radius: 0.5rem;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-transform: uppercase;
+                font-size: 2vh;
+                font-weight: 700;
+
+            }
+
+            span:hover,
+            span:active {
+                background-color: rgb(226, 222, 222);
+                cursor: pointer;
+            }
+
+            .active {
+                background-color: rgb(226, 222, 222);
+            }
+        }
+
+        &_nav {
+            justify-self: end;
+            align-self: center;
+
+            button {
+                background: none;
+                border: none;
+                cursor: pointer;
+                font-size: 2rem;
+                color: #7dd87d;
+            }
+            button:disabled {
+             
+                color: grey;
+            }
+
+        }
+    }
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { QuizService } from '../quiz.service';
 
 @Component({
   selector: 'app-showcase',
@@ -6,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./showcase.component.scss']
 })
 export class ShowcaseComponent implements OnInit {
-
-  constructor() { }
+quizData
+  constructor(private quizService:QuizService) { }
 
   ngOnInit() {
   }
