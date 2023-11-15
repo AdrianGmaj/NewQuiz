@@ -7,14 +7,18 @@ import { QuizCardComponent } from './quiz-card/quiz-card.component';
 import { PlaygroundComponent } from './playground/playground.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ScorePageComponent } from './score-page/score-page.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { CategoryCardComponent } from './categories/category-card/category-card.component';
 
 @NgModule({
-  declarations: [				
+  declarations: [					
     AppComponent,
       ShowcaseComponent,
       QuizCardComponent,
       PlaygroundComponent,
-      ScorePageComponent
+      ScorePageComponent,
+      CategoriesComponent,
+      CategoryCardComponent
    ],
   imports: [
     BrowserModule,

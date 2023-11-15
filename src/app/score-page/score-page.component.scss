@@ -3,9 +3,11 @@
     width: auto;
     background-image: linear-gradient(to bottom, #5b446a, #906387);
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
     justify-content: center;
     align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Teko', sans-serif;
 
     .image {
         display: flex;
@@ -14,25 +16,47 @@
     }
 
     .content {
- display: flex;
- flex-direction: column;
- justify-content: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
         .header {
             display: flex;
             flex-direction: column;
-         
+
 
             h2 {
-                font-family: 'Roboto', sans-serif;
-                font-family: 'Teko', sans-serif;
+              
                 font-size: 4rem;
                 font-weight: 900;
                 color: whitesmoke;
                 text-transform: uppercase;
                 text-align: center;
-           
+
             }
+            .spansLegend{
+                display: flex;
+                justify-content: space-evenly;
+                padding: 2vh 2vw;
+                .spanCorrect{
+                    border-radius: 0.5rem;
+                    background-color: #7dd87d;
+                    color: white;
+                    text-transform: uppercase;
+                    padding: 1rem;
+                }
+                .spanPlayer{
+                    border-radius: 0.5rem;
+                    background-color: white;
+                    color: #5b446a;
+                    text-transform: uppercase;
+                    padding: 0.7rem;
+                    border: #f8df69 solid 0.3rem;
+    
+                }
+
+            }
+         
         }
 
         button {
@@ -41,7 +65,7 @@
             color: #5b446a;
             text-decoration: none;
             padding: 1vh;
-            margin: 1vh;
+            margin:4vh;
             text-transform: uppercase;
             border-radius: 0.4rem;
             font-family: 'Roboto', sans-serif;
@@ -67,5 +91,87 @@
             transform: translateY(px);
         }
 
+        .card {
+            font-family: 'Roboto', sans-serif;
+            font-family: 'Teko', sans-serif;
+            background-color: whitesmoke;
+            height: 30vh;
+            width: 30vw;
+            border-radius: 0.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            -webkit-box-shadow: 8px 9px 3px 0px rgba(66, 68, 90, 1);
+
+            &-question {
+                padding: 2vh 2vw;
+                font-size: 1vh;
+                background-color: #7dd87d;
+                border-radius: 0.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-transform: uppercase;
+            }
+
+            &-content {
+                display: grid;
+                grid-template-rows: 80% 20%;
+                padding: 1rem;
+
+                &_answers {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1rem;
+                    text-align: center;
+
+                    span {
+                        border-bottom: 0.1rem solid rgb(174, 171, 171);
+                        border-right: 0.1rem solid rgb(174, 171, 171);
+                        border-radius: 0.5rem;
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        text-transform: uppercase;
+                        font-size: 1vh;
+                        font-weight: 700;
+
+                    }
+
+                    span:hover,
+                    span:active {
+                        background-color: rgb(226, 222, 222);
+                        cursor: pointer;
+                    }
+
+                    .active {
+                        background-color: rgb(226, 222, 222);
+                    }
+
+                    .correct {
+                        background-color: #7dd87d;
+                    }
+
+                    .playerAnswer {
+                        border: #f8df69 solid 0.3rem;
+                        border-radius: 0.5rem;
+                    }
+                }
+
+
+            }
+        }
+
+        .answers {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 2vh;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 2vh 2vw;
+        }
+
     }
+
 }

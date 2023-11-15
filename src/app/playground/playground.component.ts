@@ -3,7 +3,7 @@ import { QuizService } from '../quiz.service';
 import { Question } from '../question';
 import { GameService } from '../game.service';
 import { PlayerAnswer } from '../PlayerAnswer';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-playground',
@@ -13,24 +13,29 @@ import { Router } from '@angular/router';
 export class PlaygroundComponent implements OnInit {
 
   question: Question
+  categoryId: number
 
   constructor(private gameService: GameService,
-    private router: Router) { }
+    private router: Router,
+    private acitvatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.categoryId = parseInt(this.acitvatedRoute.snapshot.paramMap.get('id'))
 
-    this.question = this.gameService.newQuestion()
+    console.log(this.categoryId)
+    this.question = this.gameService.newQuestion(this.categoryId);
+
   }
   onPlayerAnswer($event: PlayerAnswer) {
     console.log($event)
-  
+
     this.gameService.addAnswers($event)
 
-    if(this.gameService.endOfTheGame()){
+    if (this.gameService.endOfTheGame()) {
       console.log('koniec gry')
-this.router.navigateByUrl('score')
-    }else{
-      this.question = this.gameService.newQuestion()
+      this.router.navigateByUrl('score')
+    } else {
+      this.question = this.gameService.newQuestion(this.categoryId)
     }
   }
 

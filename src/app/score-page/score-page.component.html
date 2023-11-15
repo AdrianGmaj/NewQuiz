@@ -2,12 +2,34 @@
   <div class="image">
     <img src="/assets/scores/scores.png" alt="">
   </div>
- <div class="content">
-  <div class="header"><h2>twój wynik:  {{correctAnswers.length}} / {{answers.length}}</h2>
-    <h2></h2>
-</div>
-  
+  <div class="content">
+    <div class="header">
+      <h2>twój wynik: {{correctAnswers.length}} / {{answers.length}}</h2>
 
-<button (click)="backToStart()"> powrót</button>
- </div>
+      <div class="spansLegend">
+        <span class="spanCorrect">prawidłowa odpowiedź</span> <span class="spanPlayer">twoja odpowiedź</span>
+      </div>
+    </div>
+    <div class="answers">
+      <span *ngFor="let answer of answers">
+        <div class="card">
+          <div class="card-question">
+            <h2>{{answer.question.description}}
+            </h2>
+          </div>
+          <div class="card-content">
+            <div *ngIf="answer.answerId" class="card-content_answers">
+              <span [class.correct]="spanAnswer.correct" [class.playerAnswer]="answer.answerId  == spanAnswer.id"
+                *ngFor="let spanAnswer of answer.question.answers ">{{spanAnswer.label}} </span>
+            </div>
+
+
+          </div>
+        </div>
+      </span>
+    </div>
+
+
+    <button (click)="backToStart()"> powrót</button>
+  </div>
 </section>

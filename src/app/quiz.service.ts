@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Question } from './question';
+import { RandomGeneratorService } from './randomGenerator.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuizService {
 
-  questions: Array<Question> = [
+  private questions: Array<Question> = [
     {
       id: 1,
+      categoryId: 1,
       description: "Z ilu posłów składa się w Polsce Sejm?",
       answers: [
         {
@@ -36,6 +38,7 @@ export class QuizService {
     },
     {
       id: 2,
+      categoryId: 1,
       description: "Kto nie był prezydentem Polski?",
       answers: [
         {
@@ -63,6 +66,7 @@ export class QuizService {
     },
     {
       id: 3,
+      categoryId: 1,
       description: "W którym roku Polska przystąpiła do Unii Europejskiej?",
       answers: [
         {
@@ -90,6 +94,7 @@ export class QuizService {
     },
     {
       id: 4,
+      categoryId: 1,
       description: "W wyborach do Sejmu koalicja wyborcza musi przekroczyć próg...",
       answers: [
         {
@@ -117,6 +122,7 @@ export class QuizService {
     },
     {
       id: 5,
+      categoryId: 1,
       description: 'Kto w 2003 r. wypowiedział w stronę ówczesnego posła Zbigniewa Ziobro słowa: Pan jest zerem, panie pośle',
       answers: [
         {
@@ -144,6 +150,7 @@ export class QuizService {
     },
     {
       id: 6,
+      categoryId: 1,
       description: 'Polska dołączyła do Sojuszu Północnoatlantyckiego po wieloletnich staraniach. Polska jest członkiem nato od roku..',
       answers: [
         {
@@ -159,7 +166,7 @@ export class QuizService {
         {
           id: 3,
           label: '2003',
-          correct: true
+          correct: false
         },
         {
           id: 4,
@@ -171,6 +178,7 @@ export class QuizService {
     },
     {
       id: 7,
+      categoryId: 1,
       description: 'Ilu seantorów zasiada w polskim Senacie?',
       answers: [
         {
@@ -198,7 +206,8 @@ export class QuizService {
     },
     {
       id: 8,
-      description: 'Ile lat skączyć musi w Polsce kandydat na prezydenta kraju?',
+      categoryId: 1,
+      description: 'Ile lat skończyć musi w Polsce kandydat na prezydenta kraju?',
       answers: [
         {
           id: 1,
@@ -225,6 +234,7 @@ export class QuizService {
     },
     {
       id: 9,
+      categoryId: 1,
       description: 'Ile lat skończyć musi w Polsce kandydat na prezydenta kraju?',
       answers: [
         {
@@ -252,6 +262,7 @@ export class QuizService {
     },
     {
       id: 10,
+      categoryId: 1,
       description: 'Obecnie obowiązująca w Polsce Konstytucja została uchwalona w roku? ',
       answers: [
         {
@@ -267,7 +278,7 @@ export class QuizService {
         {
           id: 3,
           label: '1999',
-          correct: true
+          correct: false
         },
         {
           id: 4,
@@ -279,13 +290,24 @@ export class QuizService {
     },
 
   ]
-  constructor() { }
+  constructor(private random: RandomGeneratorService) { }
 
-  getQuestions() {
+  getQuestions(): Array<Question> {
     return this.questions
   }
+  getQuestionsByCategory(categoryId: number): Array<Question> {
+    return this.questions.filter((question) => question.categoryId == categoryId)
+  }
 
-  getLength():number{
+  getRandomQuestionByCategory(categoryId: number): Question {
+    let questionsByCategory = this.getQuestionsByCategory(categoryId)
+    let randomIndex = this.random.getRandom(questionsByCategory.length)
+
+    return questionsByCategory.at(randomIndex)
+
+  }
+
+  getLength(): number {
     return this.questions.length
   }
 

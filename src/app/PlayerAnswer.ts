@@ -1,7 +1,7 @@
 import { Question } from "./question";
 
 export interface PlayerAnswer {
-    questions: Question;
+    question: Question;
     answerId: number;
     correct:boolean;
 }

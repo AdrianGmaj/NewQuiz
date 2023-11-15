@@ -1,0 +1,8 @@
+<section class="categories">
+  <h2>wybierz kategorię</h2>
+  <div class="container">
+  <span *ngFor="let category of categories">
+  <app-category-card (Start)="startQuiz($event)" [categoryCard]="category"></app-category-card>
+</span>
+</div>
+</section>

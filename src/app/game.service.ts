@@ -7,7 +7,7 @@ import { PlayerAnswer } from './PlayerAnswer';
   providedIn: 'root'
 })
 export class GameService {
-  answers: Array<PlayerAnswer> = []
+  private answers: Array<PlayerAnswer> = []
   constructor(private quizService: QuizService) { }
 
   addAnswers(answer: PlayerAnswer) {
@@ -17,24 +17,28 @@ export class GameService {
 
 
 
-  newQuestion(): Question {
+  newQuestion(categoryId: number): Question {
+    let randomQuestion = this.quizService.getRandomQuestionByCategory(categoryId)
 
-    let randomIndex = this.getRandomInt(this.quizService.getLength())
-    return this.quizService.getQuestions().at(randomIndex)
+    while (this.isQuestionRepeat(randomQuestion)) {
+      randomQuestion = this.quizService.getRandomQuestionByCategory(categoryId)
+    }
+    return randomQuestion
 
   }
-  private getRandomInt(max) {
-    return Math.floor(Math.random() * max);
+
+  isQuestionRepeat(randomQuestion:Question):boolean {
+    return this.answers.map((answer) => answer.question).includes(randomQuestion)
   }
 
   endOfTheGame(): boolean {
-    return this.answers.length == 8
+    return this.answers.length == this.quizService.getLength()
   }
 
-  getAnswers():Array<PlayerAnswer>{
+  getAnswers(): Array<PlayerAnswer> {
     return this.answers
   }
-  reset(){
-    this.answers =[]
+  reset() {
+    this.answers = []
   }
 }

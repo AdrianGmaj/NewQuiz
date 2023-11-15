@@ -1,0 +1,54 @@
+.card {
+    -webkit-box-shadow: 8px 9px 3px 0px rgba(66, 68, 90, 1);
+    transition: all 0.5s ease-in-out;
+    height: 20rem;
+    padding: 1vh 1vw;
+}
+
+a {
+    background-color: #7dd87d;
+    font-size: 1.5vh;
+    color: #5b446a;
+    text-decoration: none;
+    padding: 1vh;
+    text-transform: uppercase;
+    border-radius: 0.4rem;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    box-shadow: 0 9px #999;
+
+    transition: all 0.5s ease-in-out;
+    height: auto;
+    width: auto;
+}
+
+a:hover {
+    box-shadow: 0 5px #666;
+    transform: translateY(9px);
+    cursor: pointer;
+}
+
+a:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(px);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h5 {
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Teko', sans-serif;
+    font-size: 3vh;
+    text-transform: uppercase;
+}
+
+/* .card:hover {
+    transform: scale(105%);
+    cursor: pointer;
+} */

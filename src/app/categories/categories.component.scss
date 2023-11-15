@@ -1,0 +1,24 @@
+.categories {
+    min-height: 100vh;
+    width: auto;
+    background-image: linear-gradient(to bottom, #5b446a, #906387);
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Teko', sans-serif;
+    h2{
+        font-size: 4rem;
+        font-weight: 900;
+        color: whitesmoke;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 5vh 5vw;
+    }
+    .container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1vh;
+        padding: 5vh 5vw;
+    }
+}
