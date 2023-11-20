@@ -2,8 +2,8 @@
     font-family: 'Roboto', sans-serif;
     font-family: 'Teko', sans-serif;
     background-color: whitesmoke;
-    height: 50vh;
-    width: 50vw;
+    height: 60vh;
+    width: 60vw;
     border-radius: 0.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -17,6 +17,11 @@
         justify-content: center;
         align-items: center;
         text-transform: uppercase;
+        text-align: center;
+
+        h2 {
+            font-size: calc(1rem + 0.5vw)
+        }
     }
 
     &-content {
@@ -39,8 +44,8 @@
                 align-items: center;
                 justify-content: center;
                 text-transform: uppercase;
-                font-size: 2vh;
-                font-weight: 700;
+                font-size: calc(1rem + 0.5vw);
+                font-weight: 500;
 
             }
 
@@ -53,24 +58,78 @@
             .active {
                 background-color: rgb(226, 222, 222);
             }
+
+
         }
 
         &_nav {
-            justify-self: end;
+            display: flex;
+            justify-content: space-evenly;
             align-self: center;
+            
+            
+
+
+
+
 
             button {
-                background: none;
+
+                background-color: #7dd87d;
+               
+                color: #5b446a;
+                text-decoration: none;
+                padding: 1vh;
+                text-transform: uppercase;
+                border-radius: 0.4rem;
+                font-family: 'Roboto', sans-serif;
+                font-family: 'Teko', sans-serif;
+                font-weight: 700;
+                box-shadow: 0 9px #999;
+
+                transition: all 0.5s ease-in-out;
                 border: none;
                 cursor: pointer;
-                font-size: 2rem;
-                color: #7dd87d;
+                font-size: 1.5vh;
+                width: 80%;
             }
+
+            button:hover {
+                box-shadow: 0 5px #666;
+                transform: translateY(9px);
+                cursor: pointer;
+            }
+
+            button:active {
+                box-shadow: 0 5px #666;
+                transform: translateY(9px);
+            }
+
             button:disabled {
-             
-                color: grey;
+                background-color: grey;
+                color: rgb(214, 213, 213);
+
+                box-shadow: none;
+            }
+
+            button:disabled:hover,
+            button:disabled:active {
+                transform: none;
+                box-shadow: none;
+                cursor: not-allowed;
+
             }
 
         }
+    }
+
+
+}
+
+@media screen and (max-width: 900px) {
+    .card {
+        grid-template-columns: 100%;
+        width: 90vw;
+        height: 80vh;
     }
 }

@@ -1,13 +1,13 @@
 .card {
     -webkit-box-shadow: 8px 9px 3px 0px rgba(66, 68, 90, 1);
     transition: all 0.5s ease-in-out;
-    height: 20rem;
+    height: 24rem;
     padding: 1vh 1vw;
 }
 
 a {
     background-color: #7dd87d;
-    font-size: 1.5vh;
+    font-size: calc(0.1vh + 1rem);
     color: #5b446a;
     text-decoration: none;
     padding: 1vh;
@@ -21,6 +21,7 @@ a {
     transition: all 0.5s ease-in-out;
     height: auto;
     width: auto;
+    text-align: center;
 }
 
 a:hover {

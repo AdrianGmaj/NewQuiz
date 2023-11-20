@@ -1,15 +1,20 @@
 <div class="card">
+
   <div [style.background]="bcgColor" class="card-question">
     <h2>{{quizCard.description}}</h2>
   </div>
+
   <div class="card-content">
     <div class="card-content_answers">
-      <span (click)="selectAnswer(answer.id)" [class.active]="selectedAnswer==answer.id" *ngFor="let answer of quizCard.answers">{{answer.label}} </span>
+      <span (click)="selectAnswer(answer.id)" [class.active]="selectedAnswer==answer.id"
+        *ngFor="let answer of quizCard.answers">{{answer.label}} </span>
     </div>
     <div class="card-content_nav">
-      <button (click)="confirmAnswer()" [disabled]="selectedAnswer == -1"> <i class="fa-regular fa-circle-right"></i></button>
+
+      <button (click)="confirmAnswer()" [disabled]="selectedAnswer == -1"> dalej</button>
 
     </div>
-
   </div>
+
+
 </div>

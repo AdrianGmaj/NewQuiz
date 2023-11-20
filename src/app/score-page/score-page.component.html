@@ -4,19 +4,20 @@
   </div>
   <div class="content">
     <div class="header">
-      <h2>twój wynik: {{correctAnswers.length}} / {{answers.length}}</h2>
+      <h1>twój wynik: {{correctAnswers.length}} / {{answers.length}}</h1>
 
       <div class="spansLegend">
         <span class="spanCorrect">prawidłowa odpowiedź</span> <span class="spanPlayer">twoja odpowiedź</span>
       </div>
     </div>
     <div class="answers">
-      <span *ngFor="let answer of answers">
+      <div *ngFor="let answer of answers">
         <div class="card">
           <div class="card-question">
             <h2>{{answer.question.description}}
             </h2>
           </div>
+
           <div class="card-content">
             <div *ngIf="answer.answerId" class="card-content_answers">
               <span [class.correct]="spanAnswer.correct" [class.playerAnswer]="answer.answerId  == spanAnswer.id"
@@ -26,7 +27,7 @@
 
           </div>
         </div>
-      </span>
+      </div>
     </div>
 
 
