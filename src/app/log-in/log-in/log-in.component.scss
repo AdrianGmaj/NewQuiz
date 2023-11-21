@@ -1,0 +1,112 @@
+.log-in {
+    min-height: 100vh;
+    width: auto;
+    background-image: linear-gradient(to bottom, #5b446a, #906387);
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Teko', sans-serif;
+
+
+    &_form-container {
+        height: 100%;
+        min-width: 60vw;
+        background-color: whitesmoke;
+        border-radius: 0.5rem;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        -webkit-box-shadow: 8px 9px 3px 0px rgba(66, 68, 90, 1);
+
+        // grid-template-areas:
+        //     "image1 image1 image1 image1"
+        //     "text text text text";
+
+
+        .log-in_image {
+            grid-row: 1/2;
+            background: url("/assets/showcase.png");
+            background-color: #906387;
+            background-position: center;
+            background-repeat: repeat;
+
+
+
+            min-height: 20vh;
+
+        }
+
+        .log-in_form {
+            grid-row: 2/3;
+            background-color: antiquewhite;
+            padding: 1vh 1vw;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            padding: 2vh 2vw;
+            justify-content: center;
+            align-items: center;
+
+            mat-form-field {
+                padding: 1vh;
+                height: 200%;
+                width: 80%;
+                justify-self: center;
+            }
+
+        }
+
+        button {
+
+            background-color: #7dd87d;
+
+            color: #5b446a;
+            text-decoration: none;
+            padding: 1vh;
+            text-transform: uppercase;
+            border-radius: 0.4rem;
+            font-family: 'Roboto', sans-serif;
+            font-family: 'Teko', sans-serif;
+            font-weight: 700;
+            box-shadow: 0 9px #999;
+
+            transition: all 0.5s ease-in-out;
+            border: none;
+            cursor: pointer;
+            font-size: 2vh;
+            width: 50%;
+            height: 50%;
+            align-self: center;
+            justify-self: center;
+        }
+
+        button:hover {
+            box-shadow: 0 5px #666;
+            transform: translateY(9px);
+            cursor: pointer;
+        }
+
+        button:active {
+            box-shadow: 0 5px #666;
+            transform: translateY(9px);
+        }
+
+        button:disabled {
+            background-color: grey;
+            color: rgb(214, 213, 213);
+
+            box-shadow: none;
+        }
+
+        button:disabled:hover,
+        button:disabled:active {
+            transform: none;
+            box-shadow: none;
+            cursor: not-allowed;
+
+        }
+    }
+}

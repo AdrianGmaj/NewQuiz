@@ -1,0 +1,29 @@
+<section class="log-in">
+  <div class="log-in_form-container">
+
+    <div class="log-in_image">
+      <!-- <img src="/assets/showcase.png" alt=""> -->
+    </div>
+
+    <div class="log-in_form">
+
+      <form action="" [formGroup]="LogInForm">
+        <mat-form-field>
+          <mat-label>nick</mat-label>
+          <input formControlName="nick" matInput value="">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>hasło</mat-label>
+          <input formControlName="password" type="password" matInput value="">
+        </mat-form-field>
+        <button [disabled]="LogInForm.invalid">zaloguj</button>
+      </form>
+
+
+    </div>
+
+
+
+
+  </div>
+</section>
