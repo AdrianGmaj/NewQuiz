@@ -1,0 +1,21 @@
+.admin{
+    min-height: 100vh;
+    width: auto;
+    background-image: linear-gradient(to bottom, #5b446a, #906387);
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Teko', sans-serif;
+    &-content{
+        min-height: 80vh;
+        min-width: 80vw;
+        background-color:antiquewhite ;
+        border-radius: 1rem;
+    }
+
+    mat-tab-group{
+padding: 1vh 1vw;
+    }
+}
