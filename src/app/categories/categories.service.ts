@@ -25,12 +25,17 @@ export class CategoriesService {
       title: 'frontend',
       image: '/assets/categories/frontend.png'
     },
+    {
+      id: 5,
+      title: 'esc',
+      image: '/assets/categories/esc.png'
+    }
 
   ]
 
   constructor() { }
 
-  getCategories(){
+  getCategories() {
     return this.categories
   }
 

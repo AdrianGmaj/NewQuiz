@@ -1,0 +1,67 @@
+.list{
+    padding: calc(2rem + 2vw);
+
+}
+img{
+  height: 10vh;
+  }
+  .edit{
+    
+    background-color: #7dd87d;
+
+    color: #5b446a;
+    text-decoration: none;
+    padding: 1vh;
+    text-transform: uppercase;
+    border-radius: 0.4rem;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    box-shadow: 0 9px #999;
+
+    transition: all 0.5s ease-in-out;
+    border: none;
+    cursor: pointer;
+    font-size: calc(0.5rem + 0.5vw);
+    width: 30%;
+    height: 50%;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .delete{
+    
+    background-color: #d8927d;
+
+    color: #5b446a;
+    text-decoration: none;
+    padding: 1vh;
+    text-transform: uppercase;
+    border-radius: 0.4rem;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    box-shadow: 0 9px #999;
+
+    transition: all 0.5s ease-in-out;
+    border: none;
+    cursor: pointer;
+    font-size: calc(0.5rem + 0.5vw);
+    width: 30%;
+    height: 50%;
+    align-self: center;
+    justify-self: center;
+    margin-left: 3px;
+  }
+
+
+@media screen and (max-width: 500px) {
+    .list{
+        padding: 0.2rem;
+      max-width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    }

@@ -14,8 +14,16 @@
         background-color:antiquewhite ;
         border-radius: 1rem;
     }
+.toolbar{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 1px solid black;
 
-    mat-tab-group{
-padding: 1vh 1vw;
-    }
+}
+.active{
+    background-color: #7dd87d;
+   
+}
 }

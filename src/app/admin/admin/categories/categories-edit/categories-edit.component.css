@@ -1,0 +1,12 @@
+.container{
+    
+        padding: calc(5rem + 10vw);
+        min-height: 100vh;
+    
+}
+i{
+    color:whitesmoke;
+    font-size: 3rem;
+    padding: 1rem;
+    cursor: pointer;
+}
