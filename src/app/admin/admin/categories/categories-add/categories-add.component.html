@@ -1,0 +1,31 @@
+<div class="container">
+  <i routerLink="/admin/categories" class="fa-solid fa-arrow-left-long">back</i>
+  <mat-card>
+    <h2>ADD CATEGORY</h2>
+    <form [formGroup]="categoryAddForm" class="p-3" action="">
+      <div class="m-2">
+        <mat-form-field appearance="fill">
+          <mat-label>id</mat-label>
+          <input formControlName="id" type="number" matInput>
+        </mat-form-field>
+      </div>
+
+      <div class="m-2">
+        <mat-form-field appearance="fill">
+          <mat-label>tytuł</mat-label>
+          <input formControlName="title" type="text" matInput>
+        </mat-form-field>
+      </div>
+      <div class="m-2">
+        <mat-form-field appearance="fill">
+          <mat-label>obrazek</mat-label>
+          <input formControlName="image" type="text" matInput>
+        </mat-form-field>
+      </div>
+
+
+
+      <button mat-flat-button color="accent" type="submit">ADD</button>
+    </form>
+  </mat-card>
+</div>

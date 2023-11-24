@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http'
 
 @Injectable({
   providedIn: 'root'
@@ -33,10 +35,17 @@ export class CategoriesService {
 
   ]
 
-  constructor() { }
+
+  constructor( private http: HttpClient) { }
 
   getCategories() {
     return this.categories
+  }
+  editCategory(id:number, value:Category):Observable<Category>{
+    return this.http.patch<Category>(`api/categories/${id}`,value)
+  }
+  getCategoryById(id: string): Observable<Category> {
+    return this.http.get<Category>(`api/categories/${id}`)
   }
 
 }

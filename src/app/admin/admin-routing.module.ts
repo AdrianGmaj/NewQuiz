@@ -14,6 +14,10 @@ const routes: Routes = [
         path: 'categories',
         loadChildren: () => import('./admin/categories/categories.module').then(m => m.CategoriesModule)
       },
+      {
+        path:'questions',
+        loadChildren: () => import('./admin/questions/questions.module').then(m => m.QuestionsModule)
+      }
 
     ]
   }

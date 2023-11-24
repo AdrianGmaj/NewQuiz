@@ -12,6 +12,7 @@ import { CategoryCardComponent } from './categories/category-card/category-card.
 import { LogInModule } from './log-in/log-in.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminModule } from './admin/admin.module';
+import {  HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AdminModule } from './admin/admin.module';
     AppRoutingModule,
     LogInModule,
     BrowserAnimationsModule,
-    AdminModule
+    AdminModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

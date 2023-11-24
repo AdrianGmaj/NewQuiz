@@ -18,7 +18,7 @@ import { CategoriesModule } from './admin/categories/categories.module';
     CommonModule,
     AdminRoutingModule,
     MatTabsModule,
-    CategoriesModule
+    CategoriesModule,
 
 
 

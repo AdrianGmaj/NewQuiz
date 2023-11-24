@@ -14,11 +14,15 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
+import { CategoriesEditComponent } from './categories-edit/categories-edit.component';
+import { CategoriesAddComponent } from './categories-add/categories-add.component';
 
 
 
 @NgModule({
   declarations: [CategoriesListComponent,
+    CategoriesEditComponent,
+    CategoriesAddComponent
   ],
   imports: [
     CommonModule,

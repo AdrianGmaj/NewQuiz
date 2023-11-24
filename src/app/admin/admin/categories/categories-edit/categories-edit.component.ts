@@ -4,8 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms'
 
 import { Observable } from 'rxjs';
-import { CategoriesService } from 'src/app/services/categories/categories.service';
-import { CategoryResponse } from 'src/app/services/categories/categoryResponse';
+import { CategoriesService, Category } from 'src/app/categories/categories.service';
+
 
 @Component({
   selector: 'app-categories-edit',
@@ -15,7 +15,7 @@ import { CategoryResponse } from 'src/app/services/categories/categoryResponse';
 export class CategoriesEditComponent implements OnInit {
   categoryEditForm: FormGroup
   categoryId: string;
-  category: CategoryResponse
+  category: Category
 
   constructor(
     private route: ActivatedRoute,
@@ -29,15 +29,15 @@ export class CategoriesEditComponent implements OnInit {
     this.route.data.subscribe((response) => {
 
       console.log('>> data:', response);
-      const categoryById: CategoryResponse = response['categoriesById'];
+      const categoryById: Category = response['categoriesById'];
 
       console.log('>> data:', categoryById);
 
       this.categoryEditForm = new FormGroup({
-        name: new FormControl(categoryById.name),
-        thumbnail: new FormControl(categoryById.thumbnail),
+        id: new FormControl(categoryById.id),
+        title: new FormControl(categoryById.title),
         image: new FormControl(categoryById.image),
-        active: new FormControl(categoryById.active),
+     
       })
 
 
