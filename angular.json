@@ -69,7 +69,8 @@
               "browserTarget": "NewQuiz:build:production"
             },
             "development": {
-              "browserTarget": "NewQuiz:build:development"
+              "browserTarget": "NewQuiz:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
