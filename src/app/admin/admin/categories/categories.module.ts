@@ -5,7 +5,7 @@ import { CategoriesRoutingModule } from './categories-routing.module';
 import { CategoriesListComponent } from './categories-list/categories-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { MatButton, MatButtonModule } from '@angular/material/button';
+import {  MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 

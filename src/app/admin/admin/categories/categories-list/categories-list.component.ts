@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { CategoryResponse } from 'src/app/categories/CategoryResponse';
 import { CategoriesService, Category } from 'src/app/categories/categories.service';
 
 
@@ -9,7 +11,7 @@ import { CategoriesService, Category } from 'src/app/categories/categories.servi
 })
 export class CategoriesListComponent implements OnInit {
 
-  categories: Array<Category>
+  categories$:Observable< Array<CategoryResponse>>
 
 
   displayedColumns: string[] = [
@@ -23,7 +25,7 @@ export class CategoriesListComponent implements OnInit {
   constructor(private categoriesService: CategoriesService) { }
 
   ngOnInit() {
-    this.categories = this.categoriesService.getCategories()
+    this.categories$ = this.categoriesService.getCategories()
   }
 
 

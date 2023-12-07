@@ -4,10 +4,7 @@
     <h2>ADD CATEGORY</h2>
     <form [formGroup]="categoryAddForm" class="p-3" action="">
       <div class="m-2">
-        <mat-form-field appearance="fill">
-          <mat-label>id</mat-label>
-          <input formControlName="id" type="number" matInput>
-        </mat-form-field>
+     
       </div>
 
       <div class="m-2">
@@ -25,7 +22,8 @@
 
 
 
-      <button (click)="categoryAdd()" mat-flat-button color="accent" type="submit">ADD</button>
+      <button (click)="categoryAdd(categoryAddForm.value)" mat-flat-button color="accent" type="submit">ADD</button>
     </form>
   </mat-card>
+  {{categoryAddForm.value | json}}
 </div>

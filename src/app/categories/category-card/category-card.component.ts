@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Category } from '../categories.service';
 import { Router } from '@angular/router';
+import { CategoryResponse } from '../CategoryResponse';
 
 @Component({
   selector: 'app-category-card',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CategoryCardComponent implements OnInit {
   @Input()
-  categoryCard: Category
+  categoryCard: CategoryResponse
   constructor(private router:Router) { }
 
 

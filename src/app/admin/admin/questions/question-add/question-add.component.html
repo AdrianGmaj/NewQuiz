@@ -1,0 +1,66 @@
+<div class="container">
+  <i routerLink="/admin/categories" class="fa-solid fa-arrow-left-long">back</i>
+  <mat-card>
+    <h2>ADD CATEGORY</h2>
+    <form [formGroup]="questionAddForm" class="p-3" action="">
+      <div class="m-2">
+
+      </div>
+
+      <div class="m-2">
+  
+
+        <mat-form-field>
+          <mat-label>kategorie</mat-label>
+          <mat-select>
+          
+              <mat-option *ngFor="let category of categories$ | async" [value]="category.id">{{category.title}}</mat-option>
+          
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="m-2">
+        <mat-form-field appearance="fill">
+          <mat-label>pytanie</mat-label>
+          <input formControlName="description" type="text" matInput>
+        </mat-form-field>
+      </div>
+
+
+      <div class="m-2">
+        <mat-form-field appearance="fill">
+          <mat-label>odpowiedź</mat-label>
+          <input formControlName="a1" type="text" matInput>
+          <mat-checkbox formControlName="c1" class="example-margin">correct</mat-checkbox>
+        </mat-form-field>
+
+      </div>
+      <div class="m-2">
+        <mat-form-field appearance="fill">
+          <mat-label>odpowiedź</mat-label>
+          <input formControlName="a2" type="text" matInput>
+          <mat-checkbox formControlName="c2" class="example-margin">correct</mat-checkbox>
+        </mat-form-field>
+      </div>
+      <div class="m-2">
+        <mat-form-field appearance="fill">
+          <mat-label>odpowiedź</mat-label>
+          <input formControlName="a3" type="text" matInput>
+          <mat-checkbox formControlName="c3" class="example-margin">correct</mat-checkbox>
+        </mat-form-field>
+      </div>
+      <div class="m-2">
+        <mat-form-field appearance="fill">
+          <mat-label>odpowiedź</mat-label>
+          <input formControlName="a4" type="text" matInput>
+          <mat-checkbox formControlName="c4" class="example-margin">correct</mat-checkbox>
+        </mat-form-field>
+      </div>
+
+
+
+      <button (click)="questionAdd(questionAddForm.value)" mat-flat-button color="accent" type="submit">ADD</button>
+    </form>
+  </mat-card>
+  {{questionAddForm.value | json}}
+</div>

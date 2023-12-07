@@ -7,11 +7,11 @@ import { CategoriesService, Category } from 'src/app/categories/categories.servi
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
-categories:Array<Category>
+
   constructor(private categoriesService: CategoriesService) { }
 
   ngOnInit() {
-this.categories = this.categoriesService.getCategories()
+
   }
 
 }

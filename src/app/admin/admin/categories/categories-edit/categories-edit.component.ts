@@ -34,7 +34,7 @@ export class CategoriesEditComponent implements OnInit {
       console.log('>> data:', categoryById);
 
       this.categoryEditForm = new FormGroup({
-        id: new FormControl(categoryById.id),
+        id: new FormControl(categoryById.image),
         title: new FormControl(categoryById.title),
         image: new FormControl(categoryById.image),
      

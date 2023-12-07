@@ -10,7 +10,7 @@ export class QuizService {
   private questions: Array<Question> = [
     {
       id: 1,
-      categoryId: 1,
+      categoryId: 2,
       description: "Z ilu posłów składa się w Polsce Sejm?",
       answers: [
         {
@@ -38,7 +38,7 @@ export class QuizService {
     },
     {
       id: 2,
-      categoryId: 1,
+      categoryId: 2,
       description: "Kto nie był prezydentem Polski?",
       answers: [
         {
@@ -66,7 +66,7 @@ export class QuizService {
     },
     {
       id: 3,
-      categoryId: 1,
+      categoryId: 2,
       description: "W którym roku Polska przystąpiła do Unii Europejskiej?",
       answers: [
         {
@@ -94,7 +94,7 @@ export class QuizService {
     },
     {
       id: 4,
-      categoryId: 1,
+      categoryId: 2,
       description: "W wyborach do Sejmu koalicja wyborcza musi przekroczyć próg...",
       answers: [
         {
@@ -122,7 +122,7 @@ export class QuizService {
     },
     {
       id: 5,
-      categoryId: 1,
+      categoryId: 2,
       description: 'Kto w 2003 r. wypowiedział w stronę ówczesnego posła Zbigniewa Ziobro słowa: Pan jest zerem, panie pośle',
       answers: [
         {
@@ -150,7 +150,7 @@ export class QuizService {
     },
     {
       id: 6,
-      categoryId: 1,
+      categoryId: 2,
       description: 'Polska dołączyła do Sojuszu Północnoatlantyckiego po wieloletnich staraniach. Polska jest członkiem nato od roku..',
       answers: [
         {
@@ -178,7 +178,7 @@ export class QuizService {
     },
     {
       id: 7,
-      categoryId: 1,
+      categoryId: 2,
       description: 'Ilu seantorów zasiada w polskim Senacie?',
       answers: [
         {
@@ -206,7 +206,7 @@ export class QuizService {
     },
     {
       id: 8,
-      categoryId: 1,
+      categoryId: 2,
       description: 'Ile lat skończyć musi w Polsce kandydat na prezydenta kraju?',
       answers: [
         {
@@ -234,7 +234,7 @@ export class QuizService {
     },
     {
       id: 9,
-      categoryId: 1,
+      categoryId: 2,
       description: 'Ile lat skończyć musi w Polsce kandydat na prezydenta kraju?',
       answers: [
         {
@@ -262,7 +262,7 @@ export class QuizService {
     },
     {
       id: 10,
-      categoryId: 1,
+      categoryId: 2,
       description: 'Obecnie obowiązująca w Polsce Konstytucja została uchwalona w roku? ',
       answers: [
         {
