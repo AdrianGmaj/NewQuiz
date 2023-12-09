@@ -6,6 +6,7 @@ import { ScorePageComponent } from './score-page/score-page.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { LogInComponent } from './log-in/log-in/log-in.component';
 import { AdminComponent } from './admin/admin/admin.component';
+import { PlaygroundQuestionsResolveService } from './playground/playground-questions-resolve.service';
 
 const routes: Routes = [
   {
@@ -14,7 +15,10 @@ const routes: Routes = [
   {path:'categories', component: CategoriesComponent},
   {
     path: 'playground/:id',
-    component: PlaygroundComponent
+    component: PlaygroundComponent,
+    resolve:{
+      questions: PlaygroundQuestionsResolveService
+    }
   },
   { path: 'score', component: ScorePageComponent },
   { path: 'log-in', component: LogInComponent },

@@ -11,22 +11,22 @@ import { CategoriesService } from 'src/app/categories/categories.service';
 })
 export class CategoriesAddComponent implements OnInit {
   categoryAddForm = new FormGroup({
- 
+
     title: new FormControl('',
       [Validators.required]),
     image: new FormControl('',
       [Validators.required]),
 
   })
-  constructor( private categoryService: CategoriesService,
-    private router:Router) { }
+  constructor(private categoryService: CategoriesService,
+    private router: Router) { }
 
   ngOnInit() {
   }
-categoryAdd(value){
-  this.categoryService.addCategory(value).subscribe(response=>{
-    this.router.navigateByUrl('/admin/categories')
-  })
+  categoryAdd(value) {
+    this.categoryService.addCategory(value).subscribe(response => {
+      this.router.navigateByUrl('/admin/categories')
+    })
 
-}
+  }
 }

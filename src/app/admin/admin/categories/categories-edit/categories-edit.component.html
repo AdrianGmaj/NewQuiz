@@ -5,29 +5,19 @@
    <mat-card-title> <h3><b>edit category</b></h3></mat-card-title>
    <mat-divider></mat-divider>
     <form  [formGroup]="categoryEditForm"  class="p-3" action="">
-  <div class="m-2">
-      <mat-form-field appearance="fill">
-        <mat-label>name</mat-label>
-        <input formControlName="name" type="text" matInput>
-      </mat-form-field>
-    </div>
-  
-  <div class="m-2">
-      <mat-form-field appearance="fill">
-        <mat-label>thumbnail</mat-label>
-        <input formControlName="thumbnail" type="text" matInput>
-      </mat-form-field>
-    </div>
-  <div class="m-2">
-      <mat-form-field appearance="fill">
-        <mat-label>image</mat-label>
-        <input formControlName="image" type="text" matInput>
-      </mat-form-field>
-    </div>
-    <div class="m-2">
-      <mat-checkbox  formControlName="active" >Published</mat-checkbox>
-    </div>
-  
+
+      <div class="m-2">
+        <mat-form-field appearance="fill">
+          <mat-label>tytuł</mat-label>
+          <input formControlName="title" type="text" matInput>
+        </mat-form-field>
+      </div>
+      <div class="m-2">
+        <mat-form-field appearance="fill">
+          <mat-label>obrazek</mat-label>
+          <input formControlName="image" type="text" matInput>
+        </mat-form-field>
+      </div>
   
     <button (click)="editCategory(categoryId,categoryEditForm.value)" mat-flat-button color="accent" type="submit">ADD</button>
     </form>

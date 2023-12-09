@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {CreateQuestionDTO, Question, UpdateQuestionDTO} from "./dto/question";
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class QuestionsService {
     return this.http.get<Array<Question>>('/api/questions');
   }
 
-  findById(id: number) {
+  findById(id: number): Observable<Question> {
     return this.http.get<Question>(`/api/questions/${id}`);
   }
 

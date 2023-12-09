@@ -43,8 +43,8 @@ export class CategoriesService {
     return this.http.get<Array<CategoryResponse>>(`/api/categories`)
   }
 
-  editCategory(id: number, value: Category): Observable<Category> {
-    return this.http.patch<Category>(`api/categories/${id}`, value)
+  editCategory(id: number, value: Category): Observable<CategoryResponse> {
+    return this.http.patch<CategoryResponse>(`api/categories/${id}`, value)
   }
   getCategoryById(id: string): Observable<Category> {
     return this.http.get<Category>(`api/categories/${id}`)

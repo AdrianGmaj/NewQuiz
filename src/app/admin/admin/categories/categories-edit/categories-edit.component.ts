@@ -10,7 +10,7 @@ import { CategoriesService, Category } from 'src/app/categories/categories.servi
 @Component({
   selector: 'app-categories-edit',
   templateUrl: './categories-edit.component.html',
-  styleUrls: ['./categories-edit.component.css']
+  styleUrls: ['./categories-edit.component.scss']
 })
 export class CategoriesEditComponent implements OnInit {
   categoryEditForm: FormGroup
@@ -34,7 +34,7 @@ export class CategoriesEditComponent implements OnInit {
       console.log('>> data:', categoryById);
 
       this.categoryEditForm = new FormGroup({
-        id: new FormControl(categoryById.image),
+
         title: new FormControl(categoryById.title),
         image: new FormControl(categoryById.image),
      
@@ -44,8 +44,12 @@ export class CategoriesEditComponent implements OnInit {
     })
 
   }
-  editCategory(id, value) {
+  editCategory(id:any, value:FormData) {
     this.categoriesService.editCategory(id, value).subscribe((response) =>
       this.router.navigateByUrl('/admin/categories'))
   }
+}
+interface FormData {
+title: string,
+image: string
 }

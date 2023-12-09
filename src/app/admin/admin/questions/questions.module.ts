@@ -11,12 +11,14 @@ import { QuestionAddComponent } from './question-add/question-add.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
+import { QuestionEditComponent } from './question-edit/question-edit.component';
 
 
 @NgModule({
   declarations: [QuestionListComponent,
-    QuestionAddComponent
+    QuestionAddComponent,
+    QuestionEditComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatCheckboxModule,
     MatSelectModule
- 
+
   ]
 })
 export class QuestionsModule { }

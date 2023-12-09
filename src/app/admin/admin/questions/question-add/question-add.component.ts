@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CategoryResponse } from 'src/app/categories/CategoryResponse';
 import { CategoriesService } from 'src/app/categories/categories.service';
@@ -14,6 +14,7 @@ import { QuestionsService } from 'src/app/questions.service';
 })
 export class QuestionAddComponent implements OnInit {
   categories$: Observable<Array<CategoryResponse>>
+  categories:Array<CategoryResponse>
   questionAddForm = new FormGroup({
 
     categoryId: new FormControl('',
@@ -36,10 +37,12 @@ export class QuestionAddComponent implements OnInit {
   })
   constructor(private questionService: QuestionsService,
     private categoryService: CategoriesService,
-    private router: Router) { }
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.categories$ = this.categoryService.getCategories()
+    this.categories = this.route.snapshot.data['categories']
   }
   questionAdd(value) {
     let request: CreateQuestionDTO = {
@@ -66,7 +69,7 @@ export class QuestionAddComponent implements OnInit {
       ]
     }
     this.questionService.add(request).subscribe({
-      next: response => this.router.navigateByUrl('questions'),
+      next: response => this.router.navigateByUrl('admin/questions'),
       error: err => console.log(err)
     })
 

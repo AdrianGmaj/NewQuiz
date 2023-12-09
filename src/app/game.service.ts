@@ -17,11 +17,11 @@ export class GameService {
 
 
 
-  newQuestion(categoryId: number): Question {
-    let randomQuestion = this.quizService.getRandomQuestionByCategory(categoryId)
+  newQuestion(): Question {
+    let randomQuestion = this.quizService.getRandomQuestionByCategory()
 
     while (this.isQuestionRepeat(randomQuestion)) {
-      randomQuestion = this.quizService.getRandomQuestionByCategory(categoryId)
+      randomQuestion = this.quizService.getRandomQuestionByCategory()
     }
     return randomQuestion
 
@@ -32,7 +32,11 @@ export class GameService {
   }
 
   endOfTheGame(): boolean {
-    return this.answers.length == this.quizService.getLength()
+    return this.answers.length == this.getMaxQuestions()
+  }
+
+  getMaxQuestions(): number {
+    return Math.min(this.quizService.getLength(), 10)
   }
 
   getAnswers(): Array<PlayerAnswer> {

@@ -13,17 +13,20 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PlaygroundComponent implements OnInit {
 
   question: Question
-  categoryId: number
+
 
   constructor(private gameService: GameService,
     private router: Router,
-    private acitvatedRoute: ActivatedRoute) { }
+    private acitvatedRoute: ActivatedRoute,
+    private quizService: QuizService,
+    ) { }
 
   ngOnInit() {
-    this.categoryId = parseInt(this.acitvatedRoute.snapshot.paramMap.get('id'))
+    let questions = this.acitvatedRoute.snapshot.data['questions']
+    console.log(questions)
+    this.quizService.setQuestions(questions)
 
-    console.log(this.categoryId)
-    this.question = this.gameService.newQuestion(this.categoryId);
+    this.question = this.gameService.newQuestion();
 
   }
   onPlayerAnswer($event: PlayerAnswer) {
@@ -35,7 +38,7 @@ export class PlaygroundComponent implements OnInit {
       console.log('koniec gry')
       this.router.navigateByUrl('score')
     } else {
-      this.question = this.gameService.newQuestion(this.categoryId)
+      this.question = this.gameService.newQuestion()
     }
   }
 
