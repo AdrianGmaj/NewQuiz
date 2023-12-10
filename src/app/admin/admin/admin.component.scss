@@ -1,4 +1,4 @@
-.admin{
+.admin {
     min-height: 100vh;
     width: auto;
     background-image: linear-gradient(to bottom, #5b446a, #906387);
@@ -8,25 +8,38 @@
     align-items: center;
     font-family: 'Roboto', sans-serif;
     font-family: 'Teko', sans-serif;
-    &-content{
-        min-height: 80vh;
-        min-width: 80vw;
-        background-color:antiquewhite ;
-        border-radius: 1rem;
-    }
-.toolbar{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    text-align: center;
-    text-transform: uppercase;
-    border-bottom: 1px solid black;
 
-}
-span{
-    cursor: pointer;
-}
-.active{
-    background-color: #7dd87d;
-   
-}
+    &-content {
+        min-height: 100vh;
+        min-width: 80vw;
+        background-color: antiquewhite;
+        border-radius: 1rem;
+
+        h2 {
+            font-size: calc(2rem + 1vh);
+            font-weight: 900;
+            color: black;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 2rem;
+        }
+    }
+
+    .toolbar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+        text-transform: uppercase;
+        border-bottom: 1px solid black;
+
+    }
+
+    span {
+        cursor: pointer;
+    }
+
+    .active {
+        background-color: #7dd87d;
+
+    }
 }

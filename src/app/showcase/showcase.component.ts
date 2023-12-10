@@ -7,7 +7,7 @@ import { QuizService } from '../quiz.service';
   styleUrls: ['./showcase.component.scss']
 })
 export class ShowcaseComponent implements OnInit {
-quizData
+
   constructor(private quizService:QuizService) { }
 
   ngOnInit() {

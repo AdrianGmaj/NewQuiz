@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {CreateQuestionDTO, Question, UpdateQuestionDTO} from "./dto/question";
+import { Injectable } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
+import { CreateQuestionDTO, Question, UpdateQuestionDTO } from "./dto/question";
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -24,5 +24,9 @@ export class QuestionsService {
 
   update(id: number, dto: UpdateQuestionDTO) {
     return this.http.patch(`/api/questions/${id}`, dto);
+  }
+
+  delete(id: number) {
+    return this.http.delete(`/api/questions/${id}`)
   }
 }

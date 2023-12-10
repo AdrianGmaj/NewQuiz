@@ -35,7 +35,7 @@
         <th mat-header-cell *matHeaderCellDef> akcje </th>
         <td mat-cell *matCellDef="let element">
           <button class="edit" routerLink="/admin/questions/edit/{{element.id}}" >edit</button>
-          <button class="delete"  mat-button color="warn">delete</button>
+          <button (click)="delete(element.id)" class="delete" >delete</button>
         </td>
       </ng-container>
 

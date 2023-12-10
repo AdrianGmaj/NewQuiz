@@ -54,6 +54,10 @@ export class CategoriesService {
     return this.http.post<CategoryResponse>('/api/categories', value)
   }
 
+  deleteCategory(id):Observable<CategoryResponse>{
+    return this.http.delete<CategoryResponse>(`api/categories/${id}`)
+  }
+
 }
 
 export interface Category {

@@ -26,5 +26,11 @@ export class QuestionListComponent implements OnInit {
 
     this.questions$ = this.questionService.findAll()
   }
+  delete(id) {
+    this.questionService.delete(id).subscribe(() => {
+        this.questions$ = this.questionService.findAll()
+      })
 
+  }
 }
+

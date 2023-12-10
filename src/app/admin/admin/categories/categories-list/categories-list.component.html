@@ -5,8 +5,8 @@
       <h2>KATEGORIE</h2>
       <button routerLink="addCategory" class="new">add new</button>
     </div>
-   
-    
+
+
     <mat-divider></mat-divider>
     <table mat-table [dataSource]="categories$" class="mat-elevation-z8">
 
@@ -34,8 +34,8 @@
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef> actions </th>
         <td mat-cell *matCellDef="let element">
-          <button class="edit" routerLink="/admin/categories/edit/{{element.id}}" >edit</button>
-          <button class="delete"  mat-button color="warn">delete</button>
+          <button class="edit" routerLink="/admin/categories/edit/{{element.id}}">edit</button>
+          <button (click)="delete(element.id)" class="delete" mat-button color="warn">delete</button>
         </td>
       </ng-container>
 
