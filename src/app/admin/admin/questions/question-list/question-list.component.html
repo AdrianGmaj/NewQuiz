@@ -3,8 +3,22 @@
   <div class="container">
     <div class="header">
     <h2>PYTANIA</h2>
-    <button class="new" routerLink="add">add new</button>
+    <button class="new" routerLink="add">dodaj +</button>
   </div>
+  <div >
+    <mat-card class="filter">    <h3>filtruj po kategorii </h3>
+      <mat-form-field>
+     
+        <mat-label>kategorie</mat-label>
+        <mat-select (valueChange)="selectedCategory($event)">
+          <mat-option *ngFor="let category of categories$ | async" [value]="category.id" >
+            {{category.title}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field></mat-card>
+
+  </div> 
+
   <mat-divider></mat-divider>
     <table mat-table [dataSource]="questions$ | async" class="mat-elevation-z8">
 

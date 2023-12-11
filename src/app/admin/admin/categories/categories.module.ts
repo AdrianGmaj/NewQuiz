@@ -16,6 +16,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 import { CategoriesEditComponent } from './categories-edit/categories-edit.component';
 import { CategoriesAddComponent } from './categories-add/categories-add.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -36,7 +37,8 @@ import { CategoriesAddComponent } from './categories-add/categories-add.componen
     MatInputModule,
     MatCheckboxModule,
     MatDividerModule,
-    MatCardModule
+    MatCardModule,
+    MatSelectModule
 
 
 

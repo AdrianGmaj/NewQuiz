@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, filter, map } from 'rxjs';
+import { CategoryResponse } from 'src/app/categories/CategoryResponse';
+import { CategoriesService } from 'src/app/categories/categories.service';
 import { Question } from 'src/app/question';
 import { QuestionsService } from 'src/app/questions.service';
 import { QuizService } from 'src/app/quiz.service';
@@ -10,7 +12,7 @@ import { QuizService } from 'src/app/quiz.service';
   styleUrls: ['./question-list.component.scss']
 })
 export class QuestionListComponent implements OnInit {
-
+  categories$:Observable< Array<CategoryResponse>>
   questions$: Observable<Array<Question>>
   displayedColumns: string[] = [
     'categoryId',
@@ -20,11 +22,13 @@ export class QuestionListComponent implements OnInit {
     'actions'
   ];
   constructor(
-    private questionService: QuestionsService) { }
+    private questionService: QuestionsService,
+    private categoriesService: CategoriesService) { }
 
   ngOnInit() {
 
     this.questions$ = this.questionService.findAll()
+    this.categories$ = this.categoriesService.getCategories()
   }
   delete(id) {
     this.questionService.delete(id).subscribe(() => {
@@ -32,5 +36,12 @@ export class QuestionListComponent implements OnInit {
       })
 
   }
+
+  selectedCategory(categoryId){
+    console.log(categoryId)
+    this.questions$ = this.questionService.findAll().pipe(
+      map((data)=>data.filter((item)=> item.categoryId === categoryId))
+    )
+    }
 }
 

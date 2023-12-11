@@ -8,11 +8,11 @@ import { CategoriesAddComponent } from './categories-add/categories-add.componen
 // import { CategoriesResolveService } from 'src/app/services/categories/categories-resolve.service';
 
 const routes: Routes = [
-  {path: '', component: CategoriesListComponent},
-  {path: 'addCategory', component:CategoriesAddComponent},
+  { path: '', component: CategoriesListComponent },
+  { path: 'addCategory', component: CategoriesAddComponent },
   {
-    path:'edit/:categoryId', component: CategoriesEditComponent,
-    resolve:{
+    path: 'edit/:categoryId', component: CategoriesEditComponent,
+    resolve: {
       categoriesById: CategoriesResolveService
     }
   }

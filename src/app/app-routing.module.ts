@@ -12,11 +12,11 @@ const routes: Routes = [
   {
     path: '', component: ShowcaseComponent
   },
-  {path:'categories', component: CategoriesComponent},
+  { path: 'categories', component: CategoriesComponent },
   {
     path: 'playground/:id',
     component: PlaygroundComponent,
-    resolve:{
+    resolve: {
       questions: PlaygroundQuestionsResolveService
     }
   },
@@ -29,6 +29,7 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, {
     scrollPositionRestoration: 'enabled',
     anchorScrolling: 'enabled',
+    enableTracing: true
 
   })],
   exports: [RouterModule]
