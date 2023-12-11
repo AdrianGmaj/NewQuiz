@@ -1,8 +1,9 @@
 <div class="container">
-  <i routerLink="/admin/categories" class="fa-solid fa-arrow-left-long">back</i>
+
+  <button class="back " routerLink="/admin/categories"><< powrót</button>
 <mat-card >
-  <div *ngIf="categoryEditForm" class="container-fluid">
-   <mat-card-title> <h3><b>edit category</b></h3></mat-card-title>
+  <div *ngIf="categoryEditForm" >
+   <mat-card-title> <h3><b>edycja kategorii</b></h3></mat-card-title>
    <mat-divider></mat-divider>
     <form  [formGroup]="categoryEditForm"  class="p-3" action="">
 
@@ -19,7 +20,7 @@
         </mat-form-field>
       </div>
   
-    <button (click)="editCategory(categoryId,categoryEditForm.value)" mat-flat-button color="accent" type="submit">ADD</button>
+    <button (click)="editCategory(categoryId,categoryEditForm.value)" class="edit" type="submit">EDYTUJ</button>
     </form>
   </div>
   

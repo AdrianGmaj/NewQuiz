@@ -1,7 +1,9 @@
 <div class="container">
-  <i routerLink="/admin/categories" class="fa-solid fa-arrow-left-long">back</i>
+
+  <button routerLink="/admin/categories" class="back" > << powrót </button>
   <mat-card>
-    <h2>edit CATEGORY</h2>
+    <mat-card-title> <h3><b>edycja pytania</b></h3></mat-card-title>
+    <mat-divider></mat-divider>
     <form [formGroup]="questionEditForm" class="p-3" action="">
       <div class="m-2">
 
@@ -59,7 +61,7 @@
 
 
 
-      <button (click)="questionEdit(questionId ,questionEditForm.value)" mat-flat-button color="accent" type="submit">ADD</button>
+      <button (click)="questionEdit(questionId ,questionEditForm.value)" class="edit" type="submit">edytuj</button>
     </form>
   </mat-card>
   {{questionEditForm.value | json}}

@@ -7,7 +7,7 @@
   <div class="card-content">
     <div class="card-content_answers">
       <span (click)="selectAnswer(answer.id)" [class.active]="selectedAnswer==answer.id"
-        *ngFor="let answer of quizCard.answers">{{answer.label}} </span>
+        *ngFor="let answer of quizCard.answers"><b>{{answer.label}} </b></span>
     </div>
     <div class="card-content_nav">
 

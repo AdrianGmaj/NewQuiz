@@ -8,6 +8,7 @@
     align-items: center;
     font-family: 'Roboto', sans-serif;
     font-family: 'Teko', sans-serif;
+  
 
     &-content {
         min-height: 100vh;
@@ -18,11 +19,25 @@
         h2 {
             font-size: calc(2rem + 1vh);
             font-weight: 900;
-            color: black;
+            color: white;
             text-transform: uppercase;
             text-align: center;
             padding: 2rem;
+            text-shadow: 6px 3px 5px rgba(66, 68, 90, 1);
         }
+       
+    }
+    .header{
+      
+        background: url("/assets/showcase.png");
+        background-color: #906387;
+        background-position: center;
+        background-repeat: repeat;
+    
+
+
+
+        min-height: 20vh;
     }
 
     .toolbar {
@@ -32,10 +47,12 @@
         text-transform: uppercase;
         border-bottom: 1px solid black;
 
+
     }
 
     span {
         cursor: pointer;
+        padding: 2vh;
     }
 
     .active {
