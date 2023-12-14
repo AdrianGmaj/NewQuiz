@@ -7,6 +7,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { LogInComponent } from './log-in/log-in/log-in.component';
 import { AdminComponent } from './admin/admin/admin.component';
 import { PlaygroundQuestionsResolveService } from './playground/playground-questions-resolve.service';
+import { AdminGuardService } from './auth/admin-guard.service';
 
 const routes: Routes = [
   {
@@ -22,7 +23,7 @@ const routes: Routes = [
   },
   { path: 'score', component: ScorePageComponent },
   { path: 'log-in', component: LogInComponent },
-  { path: 'admin', component: AdminComponent },
+  { path: 'admin', component: AdminComponent,canActivate: [AdminGuardService], },
 ];
 
 @NgModule({

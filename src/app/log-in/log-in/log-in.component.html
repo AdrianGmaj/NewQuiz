@@ -7,10 +7,10 @@
 
     <div class="log-in_form">
 
-      <form action="" [formGroup]="LogInForm">
+      <form (ngSubmit)="onSubmit()" action="" [formGroup]="LogInForm">
         <mat-form-field>
           <mat-label>nick</mat-label>
-          <input formControlName="nick" matInput value="">
+          <input formControlName="email" matInput value="">
         </mat-form-field>
         <mat-form-field>
           <mat-label>hasło</mat-label>

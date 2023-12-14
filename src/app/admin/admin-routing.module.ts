@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './admin/not-found/not-found.component';
+import { AdminGuardService } from '../auth/admin-guard.service';
 
 const routes: Routes = [
   {
-    path: 'admin', component: AdminComponent,
+    path: 'admin', component: AdminComponent, 
     children: [
       {
         path: '',
