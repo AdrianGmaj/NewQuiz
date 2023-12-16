@@ -8,9 +8,10 @@
 <div class="toolbar">
   <span routerLink="categories" routerLinkActive="active">kategorie</span>
   <span routerLink="questions" routerLinkActive="active">pytania</span>
+  <span class="logout" (click)="logout()" routerLinkActive="active">wyloguj</span>
 </div>
 <div class="container">
-  <button (click)="logout()">wyloguj</button>
+
   <router-outlet></router-outlet>
 </div>
   </div>

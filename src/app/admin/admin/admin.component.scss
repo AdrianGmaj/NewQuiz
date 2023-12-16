@@ -42,11 +42,14 @@
 
     .toolbar {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 40% 40% 20%;
         text-align: center;
         text-transform: uppercase;
-        border-bottom: 1px solid black;
-
+        box-shadow: 0px 7px 0px -1px rgb(150, 148, 125);
+.logout{
+    background-color: #ffdd18;
+  
+}
 
     }
 
